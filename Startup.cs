@@ -31,15 +31,7 @@ namespace RetailCompanyProject
       services.AddDbContext<MvcLaptopContext>(options =>
       {
         var connectionString = Configuration.GetConnectionString("DefaultConnection");
-
-        //if (Environment.IsDevelopment())
-        //{
-        //  options.UseSqlite(connectionString);
-        //}
-        //else
-        //{
           options.UseSqlServer(connectionString);
-        //}
       });
     }
 
