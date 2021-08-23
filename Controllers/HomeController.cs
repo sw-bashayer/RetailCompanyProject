@@ -31,6 +31,24 @@ namespace RetailCompanyProject.Controllers
       return View( _context.Laptop.ToList());
     }
 
+    public async Task<IActionResult> Checkout(int? id)
+    {
+      if (id == null)
+      {
+        return NotFound();
+      }
+
+      var laptop = await _context.Laptop
+          .FirstOrDefaultAsync(m => m.Id == id);
+      if (laptop == null)
+      {
+        return NotFound();
+      }
+
+      return View(laptop);
+    }
+
+
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {

@@ -19,7 +19,7 @@
                         <p class="card-text">
                             Price: @item.Price.ToString("0.00")$ ,@item.Screen, @item.Color.
                         </p>
-                        <a href="" class="btn btn-primary">Add to cart</a>
+                        <a class="btn btn-primary" asp-action="Checkout"  asp-route-id="@item.Id" >Buy</a>
                     </div>
                 </div>
             </div>
