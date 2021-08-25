@@ -48,6 +48,23 @@ namespace RetailCompanyProject.Controllers
       return View(laptop);
     }
 
+    public async Task<IActionResult> Create_order(int? LaptopID)
+    {
+      if (LaptopID == null)
+      {
+        return NotFound();
+      }
+
+      var laptop = await _context.Laptop
+          .FirstOrDefaultAsync(m => m.Id == LaptopID);
+      if (laptop == null)
+      {
+        return NotFound();
+      }
+
+      return View(laptop);
+    }
+
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()

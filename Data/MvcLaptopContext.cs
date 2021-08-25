@@ -13,4 +13,6 @@ using RetailCompanyProject.Models;
         }
 
         public DbSet<RetailCompanyProject.Models.Laptop> Laptop { get; set; }
-    }
+        public DbSet<RetailCompanyProject.Models.Orders> Orders { get; set; }
+
+}
