@@ -14,14 +14,17 @@ namespace RetailCompanyProject
 {
   public class Startup
   {
-    public Startup(IConfiguration configuration, IWebHostEnvironment env)
+
+
+    public IConfiguration Configuration { get; }
+    //public IWebHostEnvironment Environment { get; } //added
+
+    public Startup(IConfiguration configuration/*, IWebHostEnvironment env*/)
     {
-      Environment = env; //added
+      //Environment = env; //added
       Configuration = configuration; 
     }
 
-    public IConfiguration Configuration { get; }
-    public IWebHostEnvironment Environment { get; } //added
 
 
     // This method gets called by the runtime. Use this method to add services to the container.
